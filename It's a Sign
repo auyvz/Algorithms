@@ -1,0 +1,35 @@
+#include <iostream>
+#include <string>
+#include <vector>
+#include <bits/stdc++.h> 
+
+using namespace std;
+
+int main() {
+
+	vector<string> box(4);
+	cin>>box[0]>>box[1]>>box[2]>>box[3];
+	
+	vector<string>::iterator iter;
+	
+	for(iter=box.begin(); iter!=box.end();iter++){
+		int len=iter->size()/2;
+		string sub1,sub2;
+		
+		sub1= iter->substr(0,len);
+		
+		if(iter->size()%2==1)
+			sub2= iter->substr(len+1,len);
+		else
+			sub2= iter->substr(len,len);
+		
+		reverse(sub2.begin(), sub2.end());
+		if(sub1==sub2){
+			cout<<"Open"<<endl;
+			return 0;
+		}
+
+	}
+	cout<<"Trash"<<endl;
+	return 0;
+}
