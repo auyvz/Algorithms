@@ -8,7 +8,11 @@ vector<string> split_string(string);
 int jumpingOnClouds(vector<int> c) {
 
     int sumJump = 0;
-    vector<int> temp;
+    
+    for(int i=0;i<c.size()-1;){
+        (c[i+2]) ? (i++, sumJump++) : (i+=2, sumJump++);
+    }
+    /*vector<int> temp;
 
     for(vector<int>::iterator iter=c.begin()+1;iter!=c.end()-1;iter++){
         if(*iter == 1)
@@ -30,7 +34,7 @@ int jumpingOnClouds(vector<int> c) {
             if(i==temp.size()-1 && (c.size()-1-temp[i])>1)
                     sumJump += (c.size()-1-temp[i])/2;
         }
-    }
+    }*/
 
     return sumJump;
 }
